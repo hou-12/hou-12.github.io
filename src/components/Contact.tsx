@@ -25,7 +25,7 @@ export function Contact() {
                                 <div className="info-icon">📧</div>
                                 <div className="info-content">
                                     <h4>{t('contact.email')}</h4>
-                                    <a href="mailto:contact@hou12.me">contact@hou12.me</a>
+                                    <a href="mailto:houssamhamrouni@gmail.com">houssamhamrouni@gmail.com</a>
                                 </div>
                             </div>
 

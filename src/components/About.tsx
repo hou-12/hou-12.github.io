@@ -69,20 +69,8 @@ export function About() {
                 </FadeIn>
 
                 <div className="about-content">
-                    <FadeIn delay={100} direction="left">
-                        <div className="about-image-container">
-                            <div className="about-image-placeholder">
-                                <svg viewBox="0 0 24 24" width="64" height="64" fill="currentColor">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                                </svg>
-                                <span>{t('about.addPhoto')}</span>
-                            </div>
-                            <div className="about-image-glow"></div>
-                        </div>
-                    </FadeIn>
-
-                    <FadeIn delay={200} direction="right">
-                        <div className="about-text">
+                    <FadeIn delay={100}>
+                        <div className="about-text about-text-centered">
                             <p className="about-intro">
                                 {t('about.intro')} <span className="gradient-text">Houssam</span>{t('about.introText')}
                             </p>
