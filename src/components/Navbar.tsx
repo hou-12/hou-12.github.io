@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Navbar.css';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useLanguage } from '../i18n/i18n';
+import { Magnetic } from './Magnetic';
 
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -23,9 +24,11 @@ export function Navbar() {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container navbar-container">
-                <a href="#" className="navbar-logo">
-                    <span className="gradient-text">Hou12</span>
-                </a>
+                <Magnetic>
+                    <a href="#" className="navbar-logo">
+                        <span className="gradient-text">Hou12</span>
+                    </a>
+                </Magnetic>
 
                 <button
                     className="mobile-menu-btn"
@@ -36,14 +39,16 @@ export function Navbar() {
                 </button>
 
                 <ul className={`navbar-links ${mobileMenuOpen ? 'open' : ''}`}>
-                    <li><a href="#about" onClick={handleNavClick}>{t('nav.about')}</a></li>
-                    <li><a href="#projects" onClick={handleNavClick}>{t('nav.projects')}</a></li>
-                    <li><a href="#skills" onClick={handleNavClick}>{t('nav.skills')}</a></li>
-                    <li><a href="#contact" onClick={handleNavClick}>{t('nav.contact')}</a></li>
+                    <li><Magnetic><a href="#about" onClick={handleNavClick}>{t('nav.about')}</a></Magnetic></li>
+                    <li><Magnetic><a href="#projects" onClick={handleNavClick}>{t('nav.projects')}</a></Magnetic></li>
+                    <li><Magnetic><a href="#skills" onClick={handleNavClick}>{t('nav.skills')}</a></Magnetic></li>
+                    <li><Magnetic><a href="#contact" onClick={handleNavClick}>{t('nav.contact')}</a></Magnetic></li>
                     <li>
-                        <a href="/cv.pdf" target="_blank" className="nav-cta">
-                            {t('nav.downloadCv')}
-                        </a>
+                        <Magnetic>
+                            <a href="/cv.pdf" target="_blank" className="nav-cta">
+                                {t('nav.downloadCv')}
+                            </a>
+                        </Magnetic>
                     </li>
                     <li className="nav-lang-switcher">
                         <LanguageSwitcher />

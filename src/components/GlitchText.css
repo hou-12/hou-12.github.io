@@ -1,0 +1,6 @@
+.glitch-text {
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    /* Optional: adds to the effect */
+}

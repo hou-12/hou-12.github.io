@@ -13,6 +13,7 @@ export interface Project {
     link?: string;
     github?: string;
     type: 'web' | 'mobile' | 'desktop' | 'iot';
+    image?: string;
 }
 
 export const projects: Project[] = [
@@ -48,72 +49,7 @@ export const projects: Project[] = [
         technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Turborepo', 'Leaflet', 'Fastify', 'Socket.io', 'Redis', 'PostgreSQL'],
         link: 'https://cyprusbusmap.hou12.me',
         type: 'web',
-    },
-    {
-        id: 'password-manager',
-        title: 'Password Manager',
-        role: {
-            en: 'Personal Project',
-            fr: 'Projet personnel'
-        },
-        description: {
-            en: 'A secure, local-first cross-platform password manager with military-grade encryption and browser extension support.',
-            fr: 'Un gestionnaire de mots de passe multiplateforme sécurisé, local-first, avec chiffrement de niveau militaire et support d\'extensions navigateur.'
-        },
-        highlights: [
-            {
-                en: 'Implemented AES-256-GCM encryption with Argon2id key derivation for secure credential storage',
-                fr: 'Implémentation du chiffrement AES-256-GCM avec dérivation de clé Argon2id pour le stockage sécurisé des identifiants'
-            },
-            {
-                en: 'Developed a Rust N-API backend for high-performance cryptographic operations',
-                fr: 'Développement d\'un backend Rust N-API pour des opérations cryptographiques haute performance'
-            },
-            {
-                en: 'Created browser extensions (Chrome/Firefox) for auto-fill via Native Messaging',
-                fr: 'Création d\'extensions navigateur (Chrome/Firefox) pour le remplissage automatique via Native Messaging'
-            },
-            {
-                en: 'Utilized SQLite with encrypted fields for local-first data persistence',
-                fr: 'Utilisation de SQLite avec champs chiffrés pour la persistance des données local-first'
-            }
-        ],
-        technologies: ['Rust', 'Electron', 'React', 'TypeScript', 'AES-256-GCM', 'Argon2id', 'SQLite', 'N-API'],
-        github: 'https://github.com/hou-12/Password-Manager-rust',
-        type: 'desktop',
-    },
-    {
-        id: 'investech',
-        title: 'INVESTech LMS',
-        role: {
-            en: 'Full Stack Developer',
-            fr: 'Développeur Full Stack'
-        },
-        description: {
-            en: 'A full-stack web application for an EU-funded educational platform, featuring role-based authentication, course management, and multi-language support.',
-            fr: 'Une application web full-stack pour une plateforme éducative financée par l\'UE, avec authentification basée sur les rôles, gestion des cours et support multilingue.'
-        },
-        highlights: [
-            {
-                en: 'Implemented role-based authentication with ASP.NET Identity and course enrollment system',
-                fr: 'Implémentation de l\'authentification basée sur les rôles avec ASP.NET Identity et système d\'inscription aux cours'
-            },
-            {
-                en: 'Built multi-language localization support for international users',
-                fr: 'Construction du support de localisation multilingue pour les utilisateurs internationaux'
-            },
-            {
-                en: 'Features include event scheduling, news publishing, innovation labs, and entrepreneurial academies',
-                fr: 'Fonctionnalités incluant planification d\'événements, publication d\'actualités, labs d\'innovation et académies entrepreneuriales'
-            },
-            {
-                en: 'Integrated file uploads with antivirus scanning (nClam) and QR code generation',
-                fr: 'Intégration de téléversement de fichiers avec scan antivirus (nClam) et génération de codes QR'
-            }
-        ],
-        technologies: ['C#', 'ASP.NET Core 9', 'Entity Framework Core', 'SQL Server', 'MVC', 'Razor Views'],
-        link: 'https://mdl.frederick.ac.cy/investech-portal/',
-        type: 'web',
+
     },
     {
         id: 'foodflow',
@@ -147,9 +83,77 @@ export const projects: Project[] = [
         technologies: ['Python', 'TensorFlow', 'Django', 'Flask', 'OpenCV', 'Raspberry Pi', 'Google Gemini API', 'OpenAI'],
         link: 'https://foodflow.cy',
         type: 'iot',
+
+    },
+    {
+        id: 'investech',
+        title: 'INVESTech LMS',
+        role: {
+            en: 'Full Stack Developer',
+            fr: 'Développeur Full Stack'
+        },
+        description: {
+            en: 'A full-stack web application for an EU-funded educational platform, featuring role-based authentication, course management, and multi-language support.',
+            fr: 'Une application web full-stack pour une plateforme éducative financée par l\'UE, avec authentification basée sur les rôles, gestion des cours et support multilingue.'
+        },
+        highlights: [
+            {
+                en: 'Implemented role-based authentication with ASP.NET Identity and course enrollment system',
+                fr: 'Implémentation de l\'authentification basée sur les rôles avec ASP.NET Identity et système d\'inscription aux cours'
+            },
+            {
+                en: 'Built multi-language localization support for international users',
+                fr: 'Construction du support de localisation multilingue pour les utilisateurs internationaux'
+            },
+            {
+                en: 'Features include event scheduling, news publishing, innovation labs, and entrepreneurial academies',
+                fr: 'Fonctionnalités incluant planification d\'événements, publication d\'actualités, labs d\'innovation et académies entrepreneuriales'
+            },
+            {
+                en: 'Integrated file uploads with antivirus scanning (nClam) and QR code generation',
+                fr: 'Intégration de téléversement de fichiers avec scan antivirus (nClam) et génération de codes QR'
+            }
+        ],
+        technologies: ['C#', 'ASP.NET Core 9', 'Entity Framework Core', 'SQL Server', 'MVC', 'Razor Views'],
+        link: 'https://mdl.frederick.ac.cy/investech-portal/',
+        type: 'web',
+
+    },
+    {
+        id: 'password-manager',
+        title: 'Password Manager',
+        role: {
+            en: 'Personal Project',
+            fr: 'Projet personnel'
+        },
+        description: {
+            en: 'A secure, local-first cross-platform password manager with military-grade encryption and browser extension support.',
+            fr: 'Un gestionnaire de mots de passe multiplateforme sécurisé, local-first, avec chiffrement de niveau militaire et support d\'extensions navigateur.'
+        },
+        highlights: [
+            {
+                en: 'Implemented AES-256-GCM encryption with Argon2id key derivation for secure credential storage',
+                fr: 'Implémentation du chiffrement AES-256-GCM avec dérivation de clé Argon2id pour le stockage sécurisé des identifiants'
+            },
+            {
+                en: 'Developed a Rust N-API backend for high-performance cryptographic operations',
+                fr: 'Développement d\'un backend Rust N-API pour des opérations cryptographiques haute performance'
+            },
+            {
+                en: 'Created browser extensions (Chrome/Firefox) for auto-fill via Native Messaging',
+                fr: 'Création d\'extensions navigateur (Chrome/Firefox) pour le remplissage automatique via Native Messaging'
+            },
+            {
+                en: 'Utilized SQLite with encrypted fields for local-first data persistence',
+                fr: 'Utilisation de SQLite avec champs chiffrés pour la persistance des données local-first'
+            }
+        ],
+        technologies: ['Rust', 'Electron', 'React', 'TypeScript', 'AES-256-GCM', 'Argon2id', 'SQLite', 'N-API'],
+        github: 'https://github.com/hou-12/Password-Manager-rust',
+        type: 'desktop',
+
     }
 ];
-
 export const skills = [
     "React", "Next.js", "TypeScript", "Node.js", "Rust", "Python",
     "ASP.NET Core", "PostgreSQL", "Redis", "Docker", "AWS", "Git"

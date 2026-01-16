@@ -1,0 +1,67 @@
+.custom-cursor-dot,
+.custom-cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate3d(0, 0, 0);
+    /* Initial hidden position */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: none;
+    }
+
+    a,
+    button,
+    [role="button"] {
+        cursor: none;
+    }
+}
+
+.custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color, #7000ff);
+    margin-left: -4px;
+    /* Center */
+    margin-top: -4px;
+}
+
+.custom-cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(112, 0, 255, 0.5);
+    margin-left: -20px;
+    margin-top: -20px;
+    transition: transform 0.1s ease-out, opacity 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, margin 0.3s ease;
+    will-change: transform;
+}
+
+.custom-cursor-dot.visible,
+.custom-cursor-follower.visible {
+    opacity: 1;
+}
+
+/* Hover State */
+.custom-cursor-follower.hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(112, 0, 255, 0.1);
+    border-color: transparent;
+    margin-left: -30px;
+    margin-top: -30px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .custom-cursor-dot,
+    .custom-cursor-follower {
+        display: none;
+    }
+}

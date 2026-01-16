@@ -2,31 +2,9 @@ import './Hero.css';
 import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
 import { motion } from 'framer-motion';
+import { HeroBackground } from './HeroBackground';
+import { GlitchText } from './GlitchText';
 
-// Letter-by-letter animation component
-function AnimatedText({ text, className = '' }: { text: string; className?: string }) {
-    const letters = text.split('');
-
-    return (
-        <motion.span className={className}>
-            {letters.map((letter, index) => (
-                <motion.span
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        duration: 0.4,
-                        delay: index * 0.03,
-                        ease: [0.25, 0.4, 0.25, 1],
-                    }}
-                    style={{ display: 'inline-block' }}
-                >
-                    {letter === ' ' ? '\u00A0' : letter}
-                </motion.span>
-            ))}
-        </motion.span>
-    );
-}
 
 // Word-by-word animation component
 function AnimatedWords({ text, className = '', delayOffset = 0 }: { text: string; className?: string; delayOffset?: number }) {
@@ -60,10 +38,8 @@ export function Hero() {
         <section className="hero-section">
             {/* Animated Background */}
             <div className="hero-bg">
-                <div className="hero-gradient hero-gradient-1"></div>
-                <div className="hero-gradient hero-gradient-2"></div>
-                <div className="hero-gradient hero-gradient-3"></div>
-                <div className="hero-particles"></div>
+                <HeroBackground />
+                <div className="hero-gradient hero-gradient-1" style={{ opacity: 0.3 }}></div>
             </div>
 
             <div className="container hero-container">
@@ -88,9 +64,10 @@ export function Hero() {
                 >
                     <h1 className="hero-title">
                         <AnimatedWords text={t('hero.greeting')} delayOffset={0.2} />
-                        <span className="gradient-text gradient-text-animated">
-                            <AnimatedText text={t('hero.name')} />
-                        </span>
+                        <GlitchText
+                            text={t('hero.name')}
+                            className="glitch-name gradient-text gradient-text-animated"
+                        />
                     </h1>
                 </motion.div>
 
