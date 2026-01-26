@@ -86,7 +86,7 @@ export const fr = {
     // Footer
     footer: {
         copyright:
-            '© 2024 Houssam Hamrouni. Développé avec React & TypeScript.',
+            'Développé avec React & TypeScript.',
     },
 
     // Project descriptions
