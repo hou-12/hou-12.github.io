@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/', // Base URL for custom domain or user page (username.github.io)
+  build: {
+    sourcemap: true
+  }
 })
