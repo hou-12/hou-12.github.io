@@ -1,6 +1,7 @@
 import './Contact.css';
 import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
+import { Mail, MapPin, Briefcase } from 'lucide-react';
 
 export function Contact() {
     const { t } = useLanguage();
@@ -22,7 +23,7 @@ export function Contact() {
                     <FadeIn delay={200}>
                         <div className="contact-info">
                             <div className="info-card glass-panel">
-                                <div className="info-icon">📧</div>
+                                <div className="info-icon"><Mail size={24} /></div>
                                 <div className="info-content">
                                     <h4>{t('contact.email')}</h4>
                                     <a href="mailto:houssamhamrouni@gmail.com">houssamhamrouni@gmail.com</a>
@@ -30,15 +31,15 @@ export function Contact() {
                             </div>
 
                             <div className="info-card glass-panel">
-                                <div className="info-icon">📍</div>
+                                <div className="info-icon"><MapPin size={24} /></div>
                                 <div className="info-content">
                                     <h4>{t('contact.location')}</h4>
-                                    <span>Cyprus 🇨🇾 / France 🇫🇷</span>
+                                    <span>Cyprus / France</span>
                                 </div>
                             </div>
 
                             <div className="info-card glass-panel">
-                                <div className="info-icon">💼</div>
+                                <div className="info-icon"><Briefcase size={24} /></div>
                                 <div className="info-content">
                                     <h4>{t('contact.availability')}</h4>
                                     <span className="available">{t('contact.availableText')}</span>

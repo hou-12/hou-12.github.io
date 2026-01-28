@@ -1,0 +1,67 @@
+.section-divider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* Diagonal variant */
+.section-divider-diagonal {
+    height: 80px;
+    margin: -1px 0;
+}
+
+.section-divider-diagonal .divider-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.section-divider-diagonal .divider-path {
+    fill: rgba(112, 0, 255, 0.05);
+}
+
+.section-divider-flip .divider-svg {
+    transform: scaleX(-1);
+}
+
+/* Dots variant */
+.section-divider-dots {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider-dots {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.divider-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.divider-dots span:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* Wave variant */
+.section-divider-wave {
+    height: 60px;
+}
+
+.section-divider-wave .divider-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.section-divider-wave .divider-path {
+    fill: rgba(0, 198, 255, 0.03);
+}

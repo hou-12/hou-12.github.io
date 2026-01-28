@@ -10,6 +10,7 @@ import { LanguageProvider } from './i18n/i18n';
 import { ScrollProgress } from './components/ScrollProgress';
 import { BackToTop } from './components/BackToTop';
 import { CustomCursor } from './components/CustomCursor';
+import { SectionDivider } from './components/SectionDivider';
 
 import { NoiseOverlay } from './components/NoiseOverlay';
 
@@ -22,10 +23,15 @@ function App() {
       <div className="app-container">
         <Navbar />
         <Hero />
+        <SectionDivider variant="dots" />
         <About />
+        <SectionDivider variant="diagonal" />
         <FeaturedProject />
+        <SectionDivider variant="dots" />
         <Projects />
+        <SectionDivider variant="diagonal" flip />
         <Skills />
+        <SectionDivider variant="dots" />
         <Contact />
         <Footer />
       </div>

@@ -96,7 +96,10 @@
 }
 
 .info-icon {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-secondary);
 }
 
 .info-content h4 {
@@ -147,6 +150,7 @@
     border-color: var(--accent-secondary);
     color: var(--accent-secondary);
     transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
 }
 
 @media (max-width: 768px) {

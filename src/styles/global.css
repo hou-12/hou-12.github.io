@@ -12,12 +12,16 @@ html {
   /* Vibrant Purple */
   --accent-secondary: #00c6ff;
   /* Cyan */
+  --accent-warm: #ff6b35;
+  /* Coral/Orange for contrast */
+  --accent-warm-glow: rgba(255, 107, 53, 0.3);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --card-hover: rgba(255, 255, 255, 0.1);
 
   /* Typography */
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-family-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -94,7 +98,7 @@ ul {
   background: linear-gradient(90deg,
       var(--accent-secondary) 0%,
       var(--accent-primary) 25%,
-      #ff6b9d 50%,
+      var(--accent-warm) 50%,
       var(--accent-primary) 75%,
       var(--accent-secondary) 100%);
   background-size: 200% 100%;

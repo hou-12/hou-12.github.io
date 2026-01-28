@@ -25,6 +25,7 @@
 }
 
 .footer-logo {
+    font-family: var(--font-family-display);
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -71,6 +72,7 @@
     color: var(--accent-secondary);
     border-color: var(--accent-secondary);
     transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
 }
 
 .footer-bottom {

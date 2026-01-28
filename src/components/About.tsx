@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './About.css';
-import { FadeIn } from './FadeIn';
+import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
+import { Code2, Rocket, Coffee, Zap } from 'lucide-react';
 
 interface CountUpProps {
     end: number;
@@ -68,42 +69,58 @@ export function About() {
                     <h2 className="section-title">{t('about.title')}</h2>
                 </FadeIn>
 
-                <div className="about-content">
-                    <FadeIn delay={100}>
-                        <div className="about-text about-text-centered">
-                            <p className="about-intro">
+                <StaggerContainer className="about-bento" staggerDelay={0.1}>
+                    {/* Main intro card with avatar */}
+                    <StaggerItem className="bento-item bento-main">
+                        <div className="bento-avatar-wrapper">
+                            <img src="/avatar.png" alt="Developer avatar" className="bento-avatar" />
+                            <div className="bento-avatar-glow" />
+                        </div>
+                        <div className="bento-main-content">
+                            <p className="bento-intro">
                                 {t('about.intro')} <span className="gradient-text">Houssam</span>{t('about.introText')}
                             </p>
-                            <p>
+                            <p className="bento-description">
                                 {t('about.paragraph1')}
                             </p>
-                            <p>
-                                {t('about.paragraph2')}
-                            </p>
-
-                            <div className="about-stats">
-                                <div className="stat">
-                                    <span className="stat-number">
-                                        <CountUp end={4} suffix="+" />
-                                    </span>
-                                    <span className="stat-label">{t('about.stats.projects')}</span>
-                                </div>
-                                <div className="stat">
-                                    <span className="stat-number">
-                                        <CountUp end={10} suffix="+" duration={2500} />
-                                    </span>
-                                    <span className="stat-label">{t('about.stats.technologies')}</span>
-                                </div>
-                                <div className="stat">
-                                    <span className="stat-number">∞</span>
-                                    <span className="stat-label">{t('about.stats.passion')}</span>
-                                </div>
-                            </div>
                         </div>
-                    </FadeIn>
-                </div>
+                    </StaggerItem>
+
+                    {/* Stats cards */}
+                    <StaggerItem className="bento-item bento-stat">
+                        <div className="stat-icon"><Code2 size={28} /></div>
+                        <span className="stat-number">
+                            <CountUp end={4} suffix="+" />
+                        </span>
+                        <span className="stat-label">{t('about.stats.projects')}</span>
+                    </StaggerItem>
+
+                    <StaggerItem className="bento-item bento-stat">
+                        <div className="stat-icon stat-icon-cyan"><Rocket size={28} /></div>
+                        <span className="stat-number">
+                            <CountUp end={10} suffix="+" duration={2500} />
+                        </span>
+                        <span className="stat-label">{t('about.stats.technologies')}</span>
+                    </StaggerItem>
+
+                    <StaggerItem className="bento-item bento-stat bento-passion">
+                        <div className="stat-icon stat-icon-warm"><Zap size={28} /></div>
+                        <span className="stat-number">∞</span>
+                        <span className="stat-label">{t('about.stats.passion')}</span>
+                    </StaggerItem>
+
+                    {/* Currently building card */}
+                    <StaggerItem className="bento-item bento-building">
+                        <div className="building-header">
+                            <Coffee size={20} className="building-icon" />
+                            <span className="building-label">Currently Building</span>
+                        </div>
+                        <p className="building-text">
+                            {t('about.paragraph2')}
+                        </p>
+                    </StaggerItem>
+                </StaggerContainer>
             </div>
         </section>
     );
 }
-

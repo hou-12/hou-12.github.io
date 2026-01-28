@@ -1,6 +1,7 @@
 import './FeaturedProject.css';
 import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
+import { Rocket, Zap, Smartphone, Map } from 'lucide-react';
 
 export function FeaturedProject() {
     const { t } = useLanguage();
@@ -22,19 +23,19 @@ export function FeaturedProject() {
 
                             <div className="featured-highlights">
                                 <div className="highlight-item">
-                                    <span className="highlight-icon">🚀</span>
+                                    <span className="highlight-icon"><Rocket size={18} /></span>
                                     <span>100% Lighthouse Score</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="highlight-icon">⚡</span>
+                                    <span className="highlight-icon"><Zap size={18} /></span>
                                     <span>Real-time WebSocket Updates</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="highlight-icon">📱</span>
+                                    <span className="highlight-icon"><Smartphone size={18} /></span>
                                     <span>PWA with Offline Support</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="highlight-icon">🗺️</span>
+                                    <span className="highlight-icon"><Map size={18} /></span>
                                     <span>1000+ Bus Stops Clustered</span>
                                 </div>
                             </div>

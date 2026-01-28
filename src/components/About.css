@@ -2,94 +2,130 @@
     padding: 6rem 0;
 }
 
-.about-content {
-    display: flex;
-    justify-content: center;
+/* Bento Grid Layout */
+.about-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
     margin-top: 2rem;
 }
 
-.about-text-centered {
-    max-width: 800px;
-    text-align: center;
-}
-
-.about-image-container {
-    position: relative;
-}
-
-.about-image-placeholder {
-    width: 280px;
-    height: 280px;
-    border-radius: 20px;
-    background: var(--glass-bg);
-    border: 2px dashed var(--glass-border);
+/* Main intro card - spans 2 columns */
+.bento-main {
+    grid-column: span 2;
+    grid-row: span 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: var(--text-secondary);
-    transition: all var(--transition-medium);
+    gap: 1.5rem;
+    padding: 2rem;
 }
 
-.about-image-placeholder:hover {
-    border-color: var(--accent-primary);
-    color: var(--accent-secondary);
+.bento-avatar-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
 }
 
-.about-image-placeholder span {
-    font-size: 0.9rem;
+.bento-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 2px solid var(--glass-border);
 }
 
-.about-image-glow {
+.bento-avatar-glow {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background: radial-gradient(circle, rgba(112, 0, 255, 0.3) 0%, transparent 70%);
     border-radius: 50%;
     z-index: -1;
-    filter: blur(40px);
+    filter: blur(30px);
 }
 
-.about-text {
+.bento-main-content {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
-.about-intro {
+.bento-intro {
     font-size: 1.3rem;
     line-height: 1.6;
     color: var(--text-primary);
 }
 
-.about-text p {
+.bento-description {
     color: var(--text-secondary);
     line-height: 1.7;
 }
 
-.about-stats {
-    display: flex;
-    gap: 3rem;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--glass-border);
-    justify-content: center;
+/* Bento item base styles */
+.bento-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
-.stat {
+.bento-item:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(112, 0, 255, 0.15);
+}
+
+/* Stat cards */
+.bento-stat {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(112, 0, 255, 0.15);
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-icon-cyan {
+    background: rgba(0, 198, 255, 0.15);
+    color: var(--accent-secondary);
+}
+
+.stat-icon-warm {
+    background: rgba(255, 107, 53, 0.15);
+    color: var(--accent-warm);
 }
 
 .stat-number {
-    font-size: 2rem;
+    font-family: var(--font-family-display);
+    font-size: 2.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bento-passion .stat-number {
+    background: linear-gradient(135deg, var(--accent-warm), var(--accent-primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -100,17 +136,70 @@
     color: var(--text-secondary);
 }
 
-@media (max-width: 900px) {
-    .about-content {
+/* Currently building card */
+.bento-building {
+    grid-column: span 2;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.building-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.building-icon {
+    color: var(--accent-warm);
+}
+
+.building-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-warm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.building-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-bento {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bento-main {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .bento-building {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-bento {
         grid-template-columns: 1fr;
-        text-align: center;
     }
 
-    .about-image-container {
-        margin: 0 auto;
+    .bento-main,
+    .bento-building {
+        grid-column: span 1;
     }
 
-    .about-stats {
-        justify-content: center;
+    .bento-stat {
+        padding: 1.25rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
     }
 }
