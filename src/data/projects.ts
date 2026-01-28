@@ -14,6 +14,7 @@ export interface Project {
     github?: string;
     type: 'web' | 'mobile' | 'desktop' | 'iot';
     image?: string;
+    video?: string;
 }
 
 export const projects: Project[] = [
@@ -48,6 +49,76 @@ export const projects: Project[] = [
         ],
         technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Turborepo', 'Leaflet', 'Fastify', 'Socket.io', 'Redis', 'PostgreSQL'],
         link: 'https://cyprusbusmap.hou12.me',
+        type: 'web',
+
+    },
+    {
+        id: 'ticketchain',
+        title: 'TicketChain',
+        role: {
+            en: 'Blockchain Architect',
+            fr: 'Architecte Blockchain'
+        },
+        description: {
+            en: 'A walletless Web3 ticketing platform with gasless transactions and offline-first validation. Features NFT minting via Account Abstraction on Base L2 and rotary QR codes.',
+            fr: 'Une plateforme de billetterie Web3 sans wallet avec transactions sans frais de gaz et validation offline-first. Inclut le minting NFT via l\'Account Abstraction sur Base L2 et des QR codes rotatifs.'
+        },
+        highlights: [
+            {
+                en: 'Gasless NFT minting via Account Abstraction (Privy + Pimlico) on Base L2',
+                fr: 'Minting NFT sans frais de gaz via Account Abstraction (Privy + Pimlico) sur Base L2'
+            },
+            {
+                en: 'Secure rotary QR codes with HMAC signatures to prevent screenshots',
+                fr: 'QR codes rotatifs sécurisés avec signatures HMAC pour empêcher les captures d\'écran'
+            },
+            {
+                en: 'Offline-first Scanner PWA using IndexedDB and background sync',
+                fr: 'PWA de scan offline-first utilisant IndexedDB et synchronisation en arrière-plan'
+            },
+            {
+                en: 'Automated secondary market with smart contract royalty enforcement',
+                fr: 'Marché secondaire automatisé avec application des royalties par smart contract'
+            }
+        ],
+        technologies: ['Next.js', 'Solidity', 'Base L2', 'Privy', 'Pimlico', 'Supabase', 'Stripe'],
+        github: 'https://github.com/hou-12/ticketchain',
+        type: 'web',
+        image: '/projects/ticketchain.png',
+        video: '/projects/ticketweb3_showcase.mp4',
+
+    },
+    {
+        id: 'clinicvoice',
+        title: 'ClinicVoice',
+        role: {
+            en: 'AI Telephony Architect',
+            fr: 'Architecte Téléphonie IA'
+        },
+        description: {
+            en: 'A production-grade AI voice receptionist for medical clinics achieving 93% profit margins. Powered by Gemini Live 2.0 Flash for sub-500ms latency and native multilingual support (Greek/English/Russian).',
+            fr: 'Une réceptionniste vocale IA de production pour cliniques médicales atteignant 93% de marge. Propulsée par Gemini Live 2.0 Flash pour une latence sous les 500ms et un support multilingue natif (Grec/Anglais/Russe).'
+        },
+        highlights: [
+            {
+                en: 'Engineered a unified real-time stream processing pipeline combining STT, LLM reasoning, and TTS via a single Gemini Live WebSocket connection',
+                fr: 'Conception d\'un pipeline de traitement de flux unifié combinant STT, raisonnement LLM et TTS via une connexion WebSocket Gemini Live unique'
+            },
+            {
+                en: 'Implemented barge-in capability allowing callers to interrupt the AI naturally',
+                fr: 'Implémentation de la capacité de "barge-in" permettant aux appelants d\'interrompre l\'IA naturellement'
+            },
+            {
+                en: 'Integrated Telnyx Call Control for programmatic voice routing and SIP trunking',
+                fr: 'Intégration du contrôle d\'appel Telnyx pour le routage vocal programmatique et le trunking SIP'
+            },
+            {
+                en: 'Deployed high-availability Node.js WebSocket backend handling concurrent audio streams',
+                fr: 'Déploiement d\'un backend WebSocket Node.js haute disponibilité gérant des flux audio concurrents'
+            }
+        ],
+        technologies: ['Gemini Live API', 'Node.js', 'WebSockets', 'Telnyx', 'TypeScript', 'Docker'],
+        github: 'https://github.com/hou-12/clinicvoice',
         type: 'web',
 
     },
