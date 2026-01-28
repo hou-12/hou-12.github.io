@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+d
+Sitemap: https://hou12.me/sitemap.xml

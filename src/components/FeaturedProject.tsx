@@ -81,6 +81,9 @@ export function FeaturedProject() {
                                     src="/projects/bus-tracker.png"
                                     alt="Cyprus Bus Tracker - Real-time map showing live bus locations"
                                     className="preview-image"
+                                    loading="lazy"
+                                    width="800"
+                                    height="450"
                                 />
                             </div>
                             <div className="preview-glow"></div>

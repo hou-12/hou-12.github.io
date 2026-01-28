@@ -33,6 +33,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
                             <div
                                 className={`project-image-container ${project.video ? 'has-video' : ''}`}
                                 onClick={project.video ? () => setIsVideoOpen(true) : undefined}
+                                role={project.video ? "button" : undefined}
+                                tabIndex={project.video ? 0 : undefined}
+                                aria-label={project.video ? `Play video for ${project.title}` : undefined}
+                                onKeyDown={project.video ? (e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        setIsVideoOpen(true);
+                                    }
+                                } : undefined}
                             >
                                 <div className="project-image-overlay"></div>
                                 {project.image ? (
@@ -40,6 +49,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                         src={project.image}
                                         alt={project.title}
                                         className="project-image"
+                                        loading="lazy"
                                         onError={(e) => {
                                             e.currentTarget.style.display = 'none';
                                             e.currentTarget.parentElement?.classList.add('no-image');

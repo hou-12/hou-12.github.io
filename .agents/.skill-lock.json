@@ -1,0 +1,44 @@
+{
+  "version": 3,
+  "skills": {
+    "frontend-design": {
+      "source": "anthropics/claude-code",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/claude-code.git",
+      "skillPath": "plugins/frontend-design/skills/frontend-design/SKILL.md",
+      "skillFolderHash": "3bd61bab4d6b858c5d3af8adf14b917ce853e4c5",
+      "installedAt": "2026-01-27T09:09:28.325Z",
+      "updatedAt": "2026-01-27T09:09:28.325Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-01-27T09:09:35.245Z",
+      "updatedAt": "2026-01-27T09:09:35.245Z"
+    },
+    "security-review": {
+      "source": "affaan-m/everything-claude-code",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/everything-claude-code.git",
+      "skillPath": "skills/security-review/SKILL.md",
+      "skillFolderHash": "6cccaf66921ed4de4a7638fc259bff6d386722c0",
+      "installedAt": "2026-01-27T09:34:06.353Z",
+      "updatedAt": "2026-01-27T09:34:06.353Z"
+    },
+    "coding-standards": {
+      "source": "affaan-m/everything-claude-code",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/everything-claude-code.git",
+      "skillPath": "skills/coding-standards/SKILL.md",
+      "skillFolderHash": "bdb902da155bba0d226d80797defd3cb51e04811",
+      "installedAt": "2026-01-27T09:34:06.424Z",
+      "updatedAt": "2026-01-27T09:34:06.424Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  }
+}

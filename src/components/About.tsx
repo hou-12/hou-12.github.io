@@ -73,7 +73,14 @@ export function About() {
                     {/* Main intro card with avatar */}
                     <StaggerItem className="bento-item bento-main">
                         <div className="bento-avatar-wrapper">
-                            <img src="/avatar.png" alt="Developer avatar" className="bento-avatar" />
+                            <img
+                                src="/avatar.png"
+                                alt="Developer avatar"
+                                className="bento-avatar"
+                                loading="lazy"
+                                width="120"
+                                height="120"
+                            />
                             <div className="bento-avatar-glow" />
                         </div>
                         <div className="bento-main-content">

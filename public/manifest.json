@@ -1,0 +1,21 @@
+{
+    "name": "Houssam Hamrouni | Full Stack Developer",
+    "short_name": "Hou12",
+    "description": "Full Stack Developer specializing in React, TypeScript, and real-time applications.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#030014",
+    "theme_color": "#030014",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
