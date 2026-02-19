@@ -9,7 +9,7 @@
 }
 
 .navbar.scrolled {
-    background: rgba(3, 0, 20, 0.85);
+    background: rgba(13, 6, 8, 0.9);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--glass-border);
@@ -47,24 +47,36 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent-primary);
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 1px;
     transition: width var(--transition-fast);
 }
 
-.navbar-links li a:hover {
+.navbar-links li a:hover,
+.navbar-links li a.active {
     color: var(--text-primary);
 }
 
-.navbar-links li a:hover::after {
+.navbar-links li a:hover::after,
+.navbar-links li a.active::after {
     width: 100%;
 }
 
+.navbar-links li a.active {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
 .nav-cta {
-    background: var(--accent-primary) !important;
-    color: white !important;
+    background: linear-gradient(135deg, var(--accent-primary), #B8292A) !important;
+    color: var(--accent-warm) !important;
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-weight: 600 !important;
+    border: 1px solid rgba(201, 168, 76, 0.25);
 }
 
 .nav-cta::after {
@@ -72,8 +84,9 @@
 }
 
 .nav-cta:hover {
-    background: #5b00cc !important;
-    box-shadow: 0 0 25px rgba(112, 0, 255, 0.5), 0 4px 15px rgba(112, 0, 255, 0.3);
+    background: linear-gradient(135deg, #B8292A, var(--accent-secondary)) !important;
+    box-shadow: 0 0 25px rgba(139, 26, 47, 0.5), 0 4px 15px rgba(201, 168, 76, 0.3) !important;
+    -webkit-text-fill-color: var(--accent-warm) !important;
 }
 
 /* Mobile Menu */
@@ -142,7 +155,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
-        background: rgba(3, 0, 20, 0.98);
+        background: rgba(13, 6, 8, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-left: 1px solid var(--glass-border);

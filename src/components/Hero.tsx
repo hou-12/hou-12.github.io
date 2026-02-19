@@ -39,7 +39,8 @@ export function Hero() {
             {/* Animated Background */}
             <div className="hero-bg">
                 <HeroBackground />
-                <div className="hero-gradient hero-gradient-1" style={{ opacity: 0.3 }}></div>
+                <div className="hero-gradient hero-gradient-1" style={{ opacity: 0.35 }}></div>
+                <div className="hero-gradient hero-gradient-2" style={{ opacity: 0.25 }}></div>
             </div>
 
             <div className="container hero-container">

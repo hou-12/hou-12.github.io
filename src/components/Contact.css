@@ -4,11 +4,41 @@
 
 .contact-subtitle {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     max-width: 500px;
     margin: 0 auto 3rem;
     line-height: 1.7;
     text-align: center;
+}
+
+/* Big CTA Block */
+.contact-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-cta-headline {
+    font-family: var(--font-family-display);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.contact-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .contact-content {
@@ -93,6 +123,7 @@
 .info-card:hover {
     border-color: var(--accent-primary);
     transform: translateX(5px);
+    box-shadow: 4px 0 20px rgba(139, 26, 47, 0.15);
 }
 
 .info-icon {
@@ -149,8 +180,8 @@
 .social-btn:hover {
     border-color: var(--accent-secondary);
     color: var(--accent-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(201, 168, 76, 0.3), 0 6px 20px rgba(201, 168, 76, 0.15);
 }
 
 @media (max-width: 768px) {

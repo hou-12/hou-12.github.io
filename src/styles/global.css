@@ -3,21 +3,26 @@ html {
 }
 
 :root {
-  /* Premium Color Palette (Dark Theme Base) */
-  --bg-color: #030014;
-  /* Deep space blue/black */
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --accent-primary: #7000ff;
-  /* Vibrant Purple */
-  --accent-secondary: #00c6ff;
-  /* Cyan */
-  --accent-warm: #ff6b35;
-  /* Coral/Orange for contrast */
-  --accent-warm-glow: rgba(255, 107, 53, 0.3);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --card-hover: rgba(255, 255, 255, 0.1);
+  /* Premium Color Palette — Dark Bordeaux + Gold + Ivory */
+  --bg-color: #0d0608;
+  /* Near-black with warm undertone */
+  --text-primary: #F5EDD6;
+  /* Ivory/cream — warm white */
+  --text-secondary: #9E8E8E;
+  /* Warm rose-grey */
+  --accent-primary: #8B1A2F;
+  /* Deep bordeaux / wine */
+  --accent-secondary: #C9A84C;
+  /* Antique gold */
+  --accent-warm: #F5EDD6;
+  /* Ivory for highlights */
+  --accent-warm-glow: rgba(201, 168, 76, 0.25);
+  /* Gold glow */
+  --glass-bg: rgba(245, 237, 214, 0.04);
+  /* Warm ivory tint on glass */
+  --glass-border: rgba(201, 168, 76, 0.12);
+  /* Subtle gold border */
+  --card-hover: rgba(201, 168, 76, 0.08);
 
   /* Typography */
   --font-family-display: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -63,12 +68,12 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--glass-border);
+  background: rgba(139, 26, 47, 0.4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  background: rgba(201, 168, 76, 0.5);
 }
 
 /* Utilities */
@@ -116,4 +121,26 @@ ul {
   100% {
     background-position: -200% 50%;
   }
+}
+
+/* Section title with gradient accent underline */
+.section-title {
+  font-family: var(--font-family-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 2px;
 }

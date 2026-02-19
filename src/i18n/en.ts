@@ -40,6 +40,7 @@ export const en = {
     // Skills
     skills: {
         title: 'Technical Skills',
+        all: 'All',
         frontend: 'Frontend',
         backend: 'Backend',
         devops: 'Database & DevOps',

@@ -1,8 +1,9 @@
 
+import { useState } from 'react';
 import './Skills.css';
 import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SpotlightCard } from './SpotlightCard';
 import {
     Atom,
@@ -24,7 +25,7 @@ import {
 interface Skill {
     name: string;
     icon: React.ReactNode;
-    category: 'frontend' | 'backend' | 'devops' | 'other';
+    category: 'frontend' | 'backend' | 'devops';
 }
 
 const skills: Skill[] = [
@@ -41,7 +42,7 @@ const skills: Skill[] = [
     { name: 'ASP.NET Core', icon: <Globe size={24} />, category: 'backend' },
     { name: 'Fastify', icon: <Zap size={24} />, category: 'backend' },
 
-    // Databases & DevOps
+    // DevOps
     { name: 'PostgreSQL', icon: <Database size={24} />, category: 'devops' },
     { name: 'Redis', icon: <HardDrive size={24} />, category: 'devops' },
     { name: 'Docker', icon: <Box size={24} />, category: 'devops' },
@@ -49,14 +50,26 @@ const skills: Skill[] = [
     { name: 'Git', icon: <GitBranch size={24} />, category: 'devops' },
 ];
 
+type FilterCategory = 'all' | 'frontend' | 'backend' | 'devops';
+
+interface FilterPill {
+    id: FilterCategory;
+    labelKey: string;
+}
+
+const filters: FilterPill[] = [
+    { id: 'all', labelKey: 'skills.all' },
+    { id: 'frontend', labelKey: 'skills.frontend' },
+    { id: 'backend', labelKey: 'skills.backend' },
+    { id: 'devops', labelKey: 'skills.devops' },
+];
+
 export function Skills() {
     const { t } = useLanguage();
+    const [activeFilter, setActiveFilter] = useState<FilterCategory>('all');
 
-    const categories = [
-        { id: 'frontend', labelKey: 'skills.frontend', color: '#00c6ff' },
-        { id: 'backend', labelKey: 'skills.backend', color: '#7000ff' },
-        { id: 'devops', labelKey: 'skills.devops', color: '#ff6b6b' },
-    ];
+    const filteredSkills =
+        activeFilter === 'all' ? skills : skills.filter((s) => s.category === activeFilter);
 
     return (
         <section id="skills" className="skills-section">
@@ -65,50 +78,64 @@ export function Skills() {
                     <h2 className="section-title">{t('skills.title')}</h2>
                 </FadeIn>
 
-                <div className="skills-categories">
-                    {categories.map((category, catIndex) => (
-                        <FadeIn key={category.id} delay={catIndex * 100}>
-                            <div className="skill-category">
-                                <h3 className="category-title" style={{ color: category.color }}>
-                                    {t(category.labelKey)}
-                                </h3>
-                                <div className="category-skills">
-                                    {skills
-                                        .filter(skill => skill.category === category.id)
-                                        .map((skill, skillIndex) => (
-                                            <FadeIn key={skill.name} delay={catIndex * 100 + skillIndex * 50}>
-                                                <motion.div
-                                                    className="skill-card-wrapper"
-                                                    animate={{
-                                                        y: [0, -6, 0],
-                                                    }}
-                                                    transition={{
-                                                        duration: 3 + (skillIndex % 4) * 0.5,
-                                                        repeat: Infinity,
-                                                        repeatType: "reverse",
-                                                        ease: "easeInOut",
-                                                        delay: (skillIndex % 3) * 0.7
-                                                    }}
-                                                    whileHover={{
-                                                        scale: 1.1,
-                                                        y: -10,
-                                                        boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                                                        transition: { duration: 0.2 }
-                                                    }}
-                                                    whileTap={{ scale: 0.95 }}
-                                                >
-                                                    <SpotlightCard className="skill-card glass-panel" spotlightColor="rgba(255, 255, 255, 0.2)">
-                                                        <span className="skill-icon">{skill.icon}</span>
-                                                        <span className="skill-name">{skill.name}</span>
-                                                    </SpotlightCard>
-                                                </motion.div>
-                                            </FadeIn>
-                                        ))
-                                    }
-                                </div>
-                            </div>
-                        </FadeIn>
-                    ))}
+                {/* Filter pills */}
+                <FadeIn delay={100}>
+                    <div className="skills-filter-bar">
+                        {filters.map((filter) => (
+                            <button
+                                key={filter.id}
+                                className={`filter-pill ${activeFilter === filter.id ? 'active' : ''}`}
+                                onClick={() => setActiveFilter(filter.id)}
+                            >
+                                {t(filter.labelKey)}
+                            </button>
+                        ))}
+                    </div>
+                </FadeIn>
+
+                {/* Skills grid */}
+                <div className="category-skills skills-grid-all">
+                    <AnimatePresence mode="popLayout">
+                        {filteredSkills.map((skill, skillIndex) => (
+                            <motion.div
+                                key={skill.name}
+                                className="skill-card-wrapper"
+                                layout
+                                initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                                animate={{
+                                    opacity: 1,
+                                    scale: 1,
+                                    y: [0, -6, 0],
+                                }}
+                                exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                                transition={{
+                                    opacity: { duration: 0.3, delay: skillIndex * 0.04 },
+                                    scale: { duration: 0.3, delay: skillIndex * 0.04 },
+                                    y: {
+                                        duration: 3 + (skillIndex % 4) * 0.5,
+                                        repeat: Infinity,
+                                        repeatType: 'reverse',
+                                        ease: 'easeInOut',
+                                        delay: (skillIndex % 3) * 0.7,
+                                    },
+                                }}
+                                whileHover={{
+                                    scale: 1.1,
+                                    y: -10,
+                                    transition: { duration: 0.2 },
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <SpotlightCard
+                                    className="skill-card glass-panel"
+                                    spotlightColor="rgba(201, 168, 76, 0.15)"
+                                >
+                                    <span className="skill-icon">{skill.icon}</span>
+                                    <span className="skill-name">{skill.name}</span>
+                                </SpotlightCard>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
                 </div>
             </div>
         </section>
