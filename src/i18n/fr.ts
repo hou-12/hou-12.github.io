@@ -14,7 +14,7 @@ export const fr = {
         greeting: 'Bonjour, je suis',
         name: 'Houssam',
         subtitle:
-            'Développeur Full Stack spécialisé dans les écosystèmes React modernes et les applications temps réel.',
+            'Ingénieur Full Stack — systèmes IA, Web3 et architectures orientées sécurité. En production.',
         bio: '« Architecture, scalabilité et pixel-perfection. »',
         bioDetail:
             'J’ai récemment conçu "Cyprus Bus Tracker", une application de suivi en temps réel du réseau de bus à Chypre, et je travaille sur des plateformes SaaS orientées données. J’aime prendre en charge l’ensemble du cycle de développement, de l’architecture système au déploiement cloud.',
@@ -30,11 +30,11 @@ export const fr = {
         addPhoto: 'Ajouter votre photo',
         intro: 'Salut ! Je suis',
         introText:
-            ', développeur Full Stack basé à Chypre, passionné par la création d’applications scalables et temps réel.',
+            `, développeur Full Stack basé à Chypre, passionné par la création d’applications scalables et temps réel.`,
         paragraph1:
-            'Je me spécialise dans les écosystèmes React et TypeScript modernes. De la modélisation des données au design d’API, en passant par l’architecture front-end et le déploiement d’applications conteneurisées, j’aime travailler sur l’ensemble de la stack.',
+            `Je me spécialise dans les écosystèmes React et TypeScript modernes. De la modélisation des données au design d’API, en passant par l’architecture front-end et le déploiement d’applications conteneurisées, j’aime travailler sur l’ensemble de la stack.`,
         paragraph2:
-            'Quand je ne code pas, vous me trouverez en train d’explorer de nouvelles architectures, de documenter des bonnes pratiques ou de construire des projets comme Cyprus Bus Tracker, des systèmes de gestion de menus pour restaurants ou des applications d’IA appliquée.',
+            `Je travaille activement sur ClinicVoice — une réceptionniste vocale IA propulsée par Gemini Live 2.0, gérant de vraies conversations patients avec une latence sous 500ms et un support multilingue natif (grec/anglais/russe). J’explore également les patterns ERC-4337 sur Base L2 et les outils cryptographiques en Rust.`,
         stats: {
             projects: 'Projets en production',
             technologies: 'Technologies',

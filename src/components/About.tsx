@@ -97,7 +97,7 @@ export function About() {
                     <StaggerItem className="bento-item bento-stat">
                         <div className="stat-icon"><Code2 size={28} /></div>
                         <span className="stat-number">
-                            <CountUp end={4} suffix="+" />
+                            <CountUp end={6} suffix="+" />
                         </span>
                         <span className="stat-label">{t('about.stats.projects')}</span>
                     </StaggerItem>
@@ -105,7 +105,7 @@ export function About() {
                     <StaggerItem className="bento-item bento-stat">
                         <div className="stat-icon stat-icon-cyan"><Rocket size={28} /></div>
                         <span className="stat-number">
-                            <CountUp end={10} suffix="+" duration={2500} />
+                            <CountUp end={20} suffix="+" duration={2500} />
                         </span>
                         <span className="stat-label">{t('about.stats.technologies')}</span>
                     </StaggerItem>

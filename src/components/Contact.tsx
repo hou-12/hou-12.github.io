@@ -1,11 +1,26 @@
+import { useState } from 'react';
 import './Contact.css';
 import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
-import { Mail, MapPin, Briefcase } from 'lucide-react';
+import { Mail, MapPin, Briefcase, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Contact() {
     const { t } = useLanguage();
+    const [form, setForm] = useState({ name: '', email: '', message: '' });
+    const [sent, setSent] = useState(false);
+
+    function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+        setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+
+    function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
+        const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+        window.location.href = `mailto:houssamhamrouni@gmail.com?subject=${subject}&body=${body}`;
+        setSent(true);
+    }
 
     return (
         <section id="contact" className="contact-section">
@@ -39,8 +54,60 @@ export function Contact() {
                     </p>
                 </FadeIn>
 
-                <div className="contact-content contact-content-centered">
+                <div className="contact-content">
                     <FadeIn delay={200}>
+                        <form className="contact-form glass-panel" onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="contact-name">Name</label>
+                                <input
+                                    id="contact-name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Your name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="contact-email">Email</label>
+                                <input
+                                    id="contact-email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="your@email.com"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="contact-message">Message</label>
+                                <textarea
+                                    id="contact-message"
+                                    name="message"
+                                    placeholder="Tell me about your project..."
+                                    rows={5}
+                                    value={form.message}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <motion.button
+                                type="submit"
+                                className="btn btn-primary submit-btn"
+                                disabled={sent}
+                                whileHover={!sent ? { scale: 1.03 } : {}}
+                                whileTap={!sent ? { scale: 0.97 } : {}}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                            >
+                                <Send size={16} />
+                                {sent ? 'Opening your mail client…' : 'Send Message'}
+                            </motion.button>
+                        </form>
+                    </FadeIn>
+
+                    <FadeIn delay={300}>
                         <div className="contact-info">
                             <div className="info-card glass-panel">
                                 <div className="info-icon"><Mail size={24} /></div>

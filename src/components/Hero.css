@@ -178,33 +178,17 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-primary), #B8292A);
+    background: linear-gradient(to right, var(--accent-primary), #B8292A, var(--accent-secondary));
+    background-size: 200% 100%;
+    background-position: left center;
     color: var(--accent-warm);
-    border: 1px solid rgba(201, 168, 76, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #B8292A, var(--accent-secondary));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.btn-primary:hover::before {
-    opacity: 1;
-}
-
-.btn-primary span,
-.btn-primary:hover {
-    position: relative;
-    z-index: 1;
+    border: none;
+    transition: background-position 0.4s ease, box-shadow var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
 }
 
 .btn-primary:hover {
+    background-position: right center;
+    color: #fff;
     box-shadow: 0 0 30px rgba(139, 26, 47, 0.5), 0 4px 20px rgba(201, 168, 76, 0.3);
     transform: translateY(-2px);
 }
