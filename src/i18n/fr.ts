@@ -32,7 +32,7 @@ export const fr = {
         introText:
             `, développeur Full Stack basé à Chypre, passionné par la création d’applications scalables et temps réel.`,
         paragraph1:
-            `Je me spécialise dans les écosystèmes React et TypeScript modernes. De la modélisation des données au design d’API, en passant par l’architecture front-end et le déploiement d’applications conteneurisées, j’aime travailler sur l’ensemble de la stack.`,
+            `Des pipelines de téléphonie IA et des smart contracts Web3 aux PWA temps réel et outils cryptographiques en Rust — je travaille sur l’ensemble de la stack avec une préférence pour les architectures orientées production et la conception orientée sécurité.`,
         paragraph2:
             `Je travaille activement sur ClinicVoice — une réceptionniste vocale IA propulsée par Gemini Live 2.0, gérant de vraies conversations patients avec une latence sous 500ms et un support multilingue natif (grec/anglais/russe). J’explore également les patterns ERC-4337 sur Base L2 et les outils cryptographiques en Rust.`,
         stats: {

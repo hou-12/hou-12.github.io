@@ -28,7 +28,7 @@ export const en = {
         addPhoto: 'Add Your Photo',
         intro: "Hey! I'm",
         introText: ', a Full Stack Developer based in Cyprus with a passion for building scalable, real-time applications.',
-        paragraph1: 'I specialize in modern React ecosystems, TypeScript, and backend services. From architecting database schemas to deploying containerized applications, I love working across the entire stack.',
+        paragraph1: 'From AI telephony pipelines and Web3 smart contracts to real-time PWAs and Rust cryptographic tooling — I work across the full stack with a bias toward production-grade architecture and security-first design.',
         paragraph2: "Actively shipping ClinicVoice — a production AI voice receptionist powered by Gemini Live 2.0, handling real patient calls with sub-500ms latency and native Greek/English/Russian support. Also pushing smart contract patterns on Base L2 and Rust-based cryptographic tooling.",
         stats: {
             projects: 'Production Projects',

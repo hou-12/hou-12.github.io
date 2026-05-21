@@ -11,7 +11,7 @@ export function Footer() {
                 <div className="footer-content">
                     <div className="footer-brand">
                         <span className="gradient-text footer-logo">Hou12</span>
-                        <p className="footer-tagline">Full Stack Developer</p>
+                        <p className="footer-tagline">Full-Stack Engineer — AI, Web3 & Security</p>
                     </div>
 
                     <div className="footer-links">
