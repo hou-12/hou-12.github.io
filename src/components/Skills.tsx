@@ -5,6 +5,7 @@ import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SpotlightCard } from './SpotlightCard';
+import { Skills3D } from './Skills3D';
 import {
     Atom,
     Layers,
@@ -67,6 +68,7 @@ const filters: FilterPill[] = [
 export function Skills() {
     const { t } = useLanguage();
     const [activeFilter, setActiveFilter] = useState<FilterCategory>('all');
+    const [viewMode, setViewMode] = useState<'grid' | '3d'>('grid');
 
     const filteredSkills =
         activeFilter === 'all' ? skills : skills.filter((s) => s.category === activeFilter);
@@ -78,63 +80,107 @@ export function Skills() {
                     <h2 className="section-title">{t('skills.title')}</h2>
                 </FadeIn>
 
-                {/* Filter pills */}
+                {/* Control bar containing filters and view switcher */}
                 <FadeIn delay={100}>
-                    <div className="skills-filter-bar">
-                        {filters.map((filter) => (
+                    <div className="skills-controls">
+                        <div className="skills-filter-bar">
+                            {filters.map((filter) => (
+                                <button
+                                    key={filter.id}
+                                    className={`filter-pill ${activeFilter === filter.id ? 'active' : ''}`}
+                                    onClick={() => setActiveFilter(filter.id)}
+                                >
+                                    {t(filter.labelKey)}
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="skills-view-toggle">
                             <button
-                                key={filter.id}
-                                className={`filter-pill ${activeFilter === filter.id ? 'active' : ''}`}
-                                onClick={() => setActiveFilter(filter.id)}
+                                className={`view-toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
+                                onClick={() => setViewMode('grid')}
                             >
-                                {t(filter.labelKey)}
+                                {t('skills.listView')}
                             </button>
-                        ))}
+                            <button
+                                className={`view-toggle-btn ${viewMode === '3d' ? 'active' : ''}`}
+                                onClick={() => setViewMode('3d')}
+                            >
+                                {t('skills.sphereView')}
+                            </button>
+                        </div>
                     </div>
                 </FadeIn>
 
-                {/* Skills grid */}
-                <div className="category-skills skills-grid-all">
-                    <AnimatePresence mode="popLayout">
-                        {filteredSkills.map((skill, skillIndex) => (
+                {/* Dynamic skills display area */}
+                <div className="skills-content-area">
+                    <AnimatePresence mode="wait">
+                        {viewMode === 'grid' ? (
                             <motion.div
-                                key={skill.name}
-                                className="skill-card-wrapper"
-                                layout
-                                initial={{ opacity: 0, scale: 0.85, y: 10 }}
-                                animate={{
-                                    opacity: 1,
-                                    scale: 1,
-                                    y: [0, -6, 0],
-                                }}
-                                exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                transition={{
-                                    opacity: { duration: 0.3, delay: skillIndex * 0.04 },
-                                    scale: { duration: 0.3, delay: skillIndex * 0.04 },
-                                    y: {
-                                        duration: 3 + (skillIndex % 4) * 0.5,
-                                        repeat: Infinity,
-                                        repeatType: 'reverse',
-                                        ease: 'easeInOut',
-                                        delay: (skillIndex % 3) * 0.7,
-                                    },
-                                }}
-                                whileHover={{
-                                    scale: 1.1,
-                                    y: -10,
-                                    transition: { duration: 0.2 },
-                                }}
-                                whileTap={{ scale: 0.95 }}
+                                key="grid"
+                                className="category-skills skills-grid-all"
+                                initial={{ opacity: 0, y: 15 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -15 }}
+                                transition={{ duration: 0.3 }}
                             >
-                                <SpotlightCard
-                                    className="skill-card glass-panel"
-                                    spotlightColor="rgba(201, 168, 76, 0.15)"
-                                >
-                                    <span className="skill-icon">{skill.icon}</span>
-                                    <span className="skill-name">{skill.name}</span>
-                                </SpotlightCard>
+                                {filteredSkills.map((skill, skillIndex) => (
+                                    <motion.div
+                                        key={skill.name}
+                                        className="skill-card-wrapper"
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                            y: [0, -6, 0],
+                                        }}
+                                        exit={{
+                                            opacity: 0,
+                                            scale: 0.8,
+                                            y: 10,
+                                            transition: { duration: 0.2 },
+                                        }}
+                                        transition={{
+                                            opacity: { duration: 0.3, delay: skillIndex * 0.04 },
+                                            scale: { duration: 0.3, delay: skillIndex * 0.04 },
+                                            y: {
+                                                duration: 3 + (skillIndex % 4) * 0.5,
+                                                repeat: Infinity,
+                                                repeatType: 'reverse',
+                                                ease: 'easeInOut',
+                                                delay: (skillIndex % 3) * 0.7,
+                                            },
+                                        }}
+                                        whileHover={{
+                                            scale: 1.1,
+                                            y: -10,
+                                            transition: { duration: 0.2 },
+                                        }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        <SpotlightCard
+                                            className="skill-card glass-panel"
+                                            spotlightColor="rgba(201, 168, 76, 0.15)"
+                                        >
+                                            <span className="skill-icon">{skill.icon}</span>
+                                            <span className="skill-name">{skill.name}</span>
+                                        </SpotlightCard>
+                                    </motion.div>
+                                ))}
                             </motion.div>
-                        ))}
+                        ) : (
+                            <motion.div
+                                key="3d"
+                                className="skills-3d-wrapper"
+                                initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.9, y: -15 }}
+                                transition={{ duration: 0.35 }}
+                            >
+                                <Skills3D skills={filteredSkills} />
+                            </motion.div>
+                        )}
                     </AnimatePresence>
                 </div>
             </div>

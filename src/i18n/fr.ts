@@ -13,11 +13,13 @@ export const fr = {
         badge: 'Disponible en freelance',
         greeting: 'Bonjour, je suis',
         name: 'Houssam',
+        fullName: 'Houssam Hamrouni',
+        role: 'Ingénieur Logiciel · Full-Stack · IA · Web3',
+        srOnlyTitle: 'Houssam Hamrouni — Ingénieur Logiciel Full-Stack spécialisé en IA, Web3 et TypeScript',
         subtitle:
-            'Ingénieur Full Stack — systèmes IA, Web3 et architectures orientées sécurité. En production.',
-        bio: '« Architecture, scalabilité et pixel-perfection. »',
-        bioDetail:
-            'J’ai récemment conçu "Cyprus Bus Tracker", une application de suivi en temps réel du réseau de bus à Chypre, et je travaille sur des plateformes SaaS orientées données. J’aime prendre en charge l’ensemble du cycle de développement, de l’architecture système au déploiement cloud.',
+            'Ingénieur logiciel full-stack créant des systèmes IA, plateformes Web3 et applications TypeScript sécurisées.',
+        bio: 'Je livre de la téléphonie IA sous 500ms, du Web3 sans gas sur Base L2, des PWA temps réel et des outils cryptographiques en Rust.',
+        bioDetail: '',
         viewWork: 'Voir mes projets',
         getInTouch: 'Me contacter',
         downloadCv: 'Télécharger le CV',
@@ -26,29 +28,30 @@ export const fr = {
 
     // About
     about: {
-        title: 'À propos de moi',
+        title: 'À propos de Houssam Hamrouni',
         addPhoto: 'Ajouter votre photo',
         intro: 'Salut ! Je suis',
         introText:
-            `, développeur Full Stack basé à Chypre, passionné par la création d’applications scalables et temps réel.`,
+            `, ingénieur logiciel full-stack basé à Chypre, spécialisé dans les applications temps réel, les systèmes IA et les produits Web3.`,
         paragraph1:
-            `Des pipelines de téléphonie IA et des smart contracts Web3 aux PWA temps réel et outils cryptographiques en Rust — je travaille sur l’ensemble de la stack avec une préférence pour les architectures orientées production et la conception orientée sécurité.`,
+            `Des pipelines de téléphonie IA et smart contracts aux PWA temps réel et outils cryptographiques en Rust, je travaille sur toute la stack avec une préférence pour les architectures de production et la sécurité.`,
         paragraph2:
-            `Je travaille activement sur ClinicVoice — une réceptionniste vocale IA propulsée par Gemini Live 2.0, gérant de vraies conversations patients avec une latence sous 500ms et un support multilingue natif (grec/anglais/russe). J’explore également les patterns ERC-4337 sur Base L2 et les outils cryptographiques en Rust.`,
+            `Je développe actuellement ClinicVoice, une réceptionniste vocale IA propulsée par Gemini Live 2.0 pour de vrais appels patients avec une latence sous 500ms et un support grec, anglais et russe natif. Je construis aussi des parcours smart contract sur Base L2 et des outils de sécurité en Rust.`,
         stats: {
             projects: 'Projets en production',
             technologies: 'Technologies',
-            passion: 'Passion',
+            passion: 'Score Lighthouse',
         },
     },
 
-    // Skills
     skills: {
         title: 'Compétences techniques',
         all: 'Tout',
         frontend: 'Frontend',
         backend: 'Backend',
         devops: 'Bases de données & DevOps',
+        listView: 'Vue Liste',
+        sphereView: 'Sphère 3D',
     },
 
     // Featured Project
@@ -68,16 +71,16 @@ export const fr = {
 
     // Projects section
     projects: {
-        title: 'Projets',
+        title: 'Projets d’ingénierie logicielle',
         viewProject: 'Détails du projet',
         viewCode: 'Voir le code',
     },
 
     // Contact
     contact: {
-        title: 'Me contacter',
+        title: 'Recruter un ingénieur logiciel full-stack',
         subtitle:
-            'Vous avez un projet en tête ou souhaitez discuter d’une opportunité ? Envoyez-moi un message, je vous répondrai avec plaisir.',
+            'Vous avez un projet IA, Web3, web temps réel ou TypeScript sécurisé ? Envoyez les détails et je répondrai avec une prochaine étape concrète.',
         email: 'E-mail',
         location: 'Localisation',
         availability: 'Disponibilité',

@@ -78,7 +78,7 @@ export function FeaturedProject() {
                                     <div className="preview-url">cyprusbusmap.hou12.me</div>
                                 </div>
                                 <img
-                                    src="/projects/bus-tracker.png"
+                                    src="/projects/bus-tracker.jpg"
                                     alt="Cyprus Bus Tracker - Real-time map showing live bus locations"
                                     className="preview-image"
                                     loading="lazy"

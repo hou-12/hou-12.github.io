@@ -13,9 +13,12 @@ export const en = {
         badge: 'Available for Freelance',
         greeting: "Hi, I'm",
         name: 'Houssam',
-        subtitle: 'Full-Stack Engineer — AI systems, Web3, and security-first architecture. Shipped to production.',
-        bio: '"Architecture, Scalability, and Pixel-Perfection."',
-        bioDetail: "Building ClinicVoice, a production AI voice receptionist powered by Gemini Live 2.0 (<500ms latency, 93% margin). Architect of Cyprus Bus Tracker and TicketChain, a gasless Web3 ticketing platform on Base L2.",
+        fullName: 'Houssam Hamrouni',
+        role: 'Software Engineer · Full-Stack · AI · Web3',
+        srOnlyTitle: 'Houssam Hamrouni — Full-Stack Software Engineer specializing in AI, Web3 and TypeScript',
+        subtitle: 'Full-stack software engineer building production AI systems, Web3 platforms, and secure TypeScript applications.',
+        bio: 'I ship AI telephony with sub-500ms latency, gasless Web3 on Base L2, real-time PWAs, and Rust cryptographic tooling.',
+        bioDetail: '',
         viewWork: 'View My Work',
         getInTouch: 'Get In Touch',
         downloadCv: 'Download CV',
@@ -24,16 +27,16 @@ export const en = {
 
     // About
     about: {
-        title: 'About Me',
+        title: 'About Houssam Hamrouni',
         addPhoto: 'Add Your Photo',
         intro: "Hey! I'm",
-        introText: ', a Full Stack Developer based in Cyprus with a passion for building scalable, real-time applications.',
-        paragraph1: 'From AI telephony pipelines and Web3 smart contracts to real-time PWAs and Rust cryptographic tooling — I work across the full stack with a bias toward production-grade architecture and security-first design.',
-        paragraph2: "Actively shipping ClinicVoice — a production AI voice receptionist powered by Gemini Live 2.0, handling real patient calls with sub-500ms latency and native Greek/English/Russian support. Also pushing smart contract patterns on Base L2 and Rust-based cryptographic tooling.",
+        introText: ', a full-stack software engineer based in Cyprus building scalable real-time applications, AI systems, and Web3 products.',
+        paragraph1: 'From AI telephony pipelines and smart contracts to real-time PWAs and Rust cryptographic tooling, I work across the stack with a bias toward production architecture and security-first design.',
+        paragraph2: "Currently shipping ClinicVoice, an AI voice receptionist powered by Gemini Live 2.0 for real patient calls with sub-500ms latency and native Greek, English, and Russian support. I also build Base L2 smart contract flows and Rust-based security tooling.",
         stats: {
             projects: 'Production Projects',
             technologies: 'Technologies',
-            passion: 'Passion',
+            passion: 'Lighthouse Score',
         },
     },
 
@@ -44,6 +47,8 @@ export const en = {
         frontend: 'Frontend',
         backend: 'Backend',
         devops: 'Database & DevOps',
+        listView: 'List View',
+        sphereView: '3D Sphere',
     },
 
     // Featured Project
@@ -62,15 +67,15 @@ export const en = {
 
     // Projects
     projects: {
-        title: 'Projects',
+        title: 'Software Engineering Projects',
         viewProject: 'View Project',
         viewCode: 'View Code',
     },
 
     // Contact
     contact: {
-        title: 'Get In Touch',
-        subtitle: "Have a project in mind or want to discuss an opportunity? I'd love to hear from you!",
+        title: 'Hire a Full-Stack Software Engineer',
+        subtitle: "Have an AI, Web3, real-time web, or secure TypeScript project in mind? Send the details and I will reply with a practical next step.",
         email: 'Email',
         location: 'Location',
         availability: 'Availability',

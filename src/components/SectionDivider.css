@@ -24,32 +24,31 @@
     transform: scaleX(-1);
 }
 
-/* Dots variant */
+/* Dots variant — rendered as a soft accent line so it doesn't read as carousel pagination */
 .section-divider-dots {
-    height: 60px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .divider-dots {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--glass-border) 25%,
+        var(--accent-secondary) 50%,
+        var(--glass-border) 75%,
+        transparent 100%
+    );
+    opacity: 0.6;
 }
 
 .divider-dots span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--glass-border);
-    transition: all 0.3s ease;
-}
-
-.divider-dots span:nth-child(3) {
-    width: 10px;
-    height: 10px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    display: none;
 }
 
 /* Wave variant */

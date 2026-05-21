@@ -47,7 +47,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                 {project.image ? (
                                     <img
                                         src={project.image}
-                                        alt={project.title}
+                                        alt={`${project.title} ${project.role?.[language] ?? 'software project'} by Houssam Hamrouni`}
                                         className="project-image"
                                         loading="lazy"
                                         onError={(e) => {

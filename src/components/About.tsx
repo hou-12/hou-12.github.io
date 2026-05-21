@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import './About.css';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import { useLanguage } from '../i18n/i18n';
-import { Code2, Rocket, Coffee, Zap } from 'lucide-react';
+import { Code2, Rocket, Coffee, Gauge } from 'lucide-react';
+import { TiltCard } from './TiltCard';
 
 interface CountUpProps {
     end: number;
@@ -72,59 +73,71 @@ export function About() {
                 <StaggerContainer className="about-bento" staggerDelay={0.1}>
                     {/* Main intro card with avatar */}
                     <StaggerItem className="bento-item bento-main">
-                        <div className="bento-avatar-wrapper">
-                            <img
-                                src="/avatar.png"
-                                alt="Developer avatar"
-                                className="bento-avatar"
-                                loading="lazy"
-                                width="120"
-                                height="120"
-                            />
-                            <div className="bento-avatar-glow" />
-                        </div>
-                        <div className="bento-main-content">
-                            <p className="bento-intro">
-                                {t('about.intro')} <span className="gradient-text">Houssam</span>{t('about.introText')}
-                            </p>
-                            <p className="bento-description">
-                                {t('about.paragraph1')}
-                            </p>
-                        </div>
+                        <TiltCard className="bento-tilt-wrapper h-full" enableTilt={true}>
+                            <div className="bento-avatar-wrapper">
+                                <img
+                                    src="/avatar.jpg"
+                                    alt="Houssam Hamrouni — Full-Stack Engineer"
+                                    className="bento-avatar"
+                                    loading="lazy"
+                                    width="120"
+                                    height="120"
+                                />
+                                <div className="bento-avatar-glow" />
+                            </div>
+                            <div className="bento-main-content">
+                                <p className="bento-intro">
+                                    {t('about.intro')} <span className="gradient-text">Houssam</span>{t('about.introText')}
+                                </p>
+                                <p className="bento-description">
+                                    {t('about.paragraph1')}
+                                </p>
+                            </div>
+                        </TiltCard>
                     </StaggerItem>
 
                     {/* Stats cards */}
                     <StaggerItem className="bento-item bento-stat">
-                        <div className="stat-icon"><Code2 size={28} /></div>
-                        <span className="stat-number">
-                            <CountUp end={6} suffix="+" />
-                        </span>
-                        <span className="stat-label">{t('about.stats.projects')}</span>
+                        <TiltCard className="bento-tilt-wrapper" enableTilt={true}>
+                            <div className="stat-icon"><Code2 size={28} /></div>
+                            <span className="stat-number">
+                                <CountUp end={6} suffix="+" />
+                            </span>
+                            <span className="stat-label">{t('about.stats.projects')}</span>
+                        </TiltCard>
                     </StaggerItem>
 
                     <StaggerItem className="bento-item bento-stat">
-                        <div className="stat-icon stat-icon-cyan"><Rocket size={28} /></div>
-                        <span className="stat-number">
-                            <CountUp end={20} suffix="+" duration={2500} />
-                        </span>
-                        <span className="stat-label">{t('about.stats.technologies')}</span>
+                        <TiltCard className="bento-tilt-wrapper" enableTilt={true}>
+                            <div className="stat-icon stat-icon-cyan"><Rocket size={28} /></div>
+                            <span className="stat-number">
+                                <CountUp end={20} suffix="+" duration={2500} />
+                            </span>
+                            <span className="stat-label">{t('about.stats.technologies')}</span>
+                        </TiltCard>
                     </StaggerItem>
 
                     <StaggerItem className="bento-item bento-stat bento-passion">
-                        <div className="stat-icon stat-icon-warm"><Zap size={28} /></div>
-                        <span className="stat-number">∞</span>
-                        <span className="stat-label">{t('about.stats.passion')}</span>
+                        <TiltCard className="bento-tilt-wrapper" enableTilt={true}>
+                            <div className="stat-icon stat-icon-warm"><Gauge size={28} /></div>
+                            <span className="stat-number">
+                                <CountUp end={100} suffix="%" duration={2200} />
+                            </span>
+                            <span className="stat-label">{t('about.stats.passion')}</span>
+                        </TiltCard>
                     </StaggerItem>
 
                     {/* Currently building card */}
                     <StaggerItem className="bento-item bento-building">
-                        <div className="building-header">
-                            <Coffee size={20} className="building-icon" />
-                            <span className="building-label">Currently Building</span>
-                        </div>
-                        <p className="building-text">
-                            {t('about.paragraph2')}
-                        </p>
+                        <TiltCard className="bento-tilt-wrapper" enableTilt={true}>
+                            <div className="building-header">
+                                <Coffee size={20} className="building-icon" />
+                                <span className="building-label">Currently Building</span>
+                            </div>
+                            <p className="building-text">
+                                {t('about.paragraph2')}
+                            </p>
+                        </TiltCard>
                     </StaggerItem>
                 </StaggerContainer>
             </div>

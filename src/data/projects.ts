@@ -26,8 +26,8 @@ export const projects: Project[] = [
             fr: 'Projet personnel'
         },
         description: {
-            en: 'A production-ready PWA for real-time bus tracking across Cyprus. Built with a split-stack architecture featuring Next.js frontend on Vercel and containerized Fastify backend on Render.',
-            fr: 'Une PWA de production pour le suivi des bus en temps réel à travers Chypre. Construite avec une architecture split-stack comportant un frontend Next.js sur Vercel et un backend Fastify conteneurisé sur Render.'
+            en: 'A production-ready real-time bus tracking PWA for Cyprus, built with a Next.js frontend, Fastify backend, live GTFS updates, and offline map caching.',
+            fr: 'Une PWA de suivi des bus en temps réel à Chypre, construite avec un frontend Next.js, un backend Fastify, des mises à jour GTFS en direct et du cache cartographique offline.'
         },
         highlights: [
             {
@@ -50,7 +50,7 @@ export const projects: Project[] = [
         technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Turborepo', 'Leaflet', 'Fastify', 'Socket.io', 'Redis', 'PostgreSQL'],
         link: 'https://cyprusbusmap.hou12.me',
         type: 'web',
-
+        image: '/projects/bus-tracker.jpg',
     },
     {
         id: 'ticketchain',
@@ -60,8 +60,8 @@ export const projects: Project[] = [
             fr: 'Architecte Blockchain'
         },
         description: {
-            en: 'A walletless Web3 ticketing platform with gasless transactions and offline-first validation. Features NFT minting via Account Abstraction on Base L2 and rotary QR codes.',
-            fr: 'Une plateforme de billetterie Web3 sans wallet avec transactions sans frais de gaz et validation offline-first. Inclut le minting NFT via l\'Account Abstraction sur Base L2 et des QR codes rotatifs.'
+            en: 'A walletless Web3 ticketing platform on Base L2 with gasless NFT minting, Account Abstraction, Stripe checkout, and offline-first event validation.',
+            fr: 'Une plateforme de billetterie Web3 sur Base L2 avec minting NFT sans gas, Account Abstraction, paiement Stripe et validation événementielle offline-first.'
         },
         highlights: [
             {
@@ -84,7 +84,7 @@ export const projects: Project[] = [
         technologies: ['Next.js', 'Solidity', 'Base L2', 'Privy', 'Pimlico', 'Supabase', 'Stripe'],
         github: 'https://github.com/hou-12/ticketchain',
         type: 'web',
-        image: '/projects/ticketchain.png',
+        image: '/projects/ticketchain.jpg',
         video: '/projects/ticketweb3_showcase.mp4',
 
     },
@@ -96,8 +96,8 @@ export const projects: Project[] = [
             fr: 'Architecte Téléphonie IA'
         },
         description: {
-            en: 'A production-grade AI voice receptionist for medical clinics achieving 93% profit margins. Powered by Gemini Live 2.0 Flash for sub-500ms latency and native multilingual support (Greek/English/Russian).',
-            fr: 'Une réceptionniste vocale IA de production pour cliniques médicales atteignant 93% de marge. Propulsée par Gemini Live 2.0 Flash pour une latence sous les 500ms et un support multilingue natif (Grec/Anglais/Russe).'
+            en: 'A production-grade AI voice receptionist for medical clinics, powered by Gemini Live 2.0 Flash for sub-500ms conversations and native Greek, English, and Russian support.',
+            fr: 'Une réceptionniste vocale IA de production pour cliniques médicales, propulsée par Gemini Live 2.0 Flash pour des conversations sous 500ms et un support grec, anglais et russe natif.'
         },
         highlights: [
             {
@@ -130,8 +130,8 @@ export const projects: Project[] = [
             fr: 'Développeur IA & IoT'
         },
         description: {
-            en: 'An end-to-end AI-enabled food waste management system for hotels and food service operations, combining IoT devices with custom ML models.',
-            fr: 'Un système de gestion du gaspillage alimentaire de bout en bout activé par l\'IA pour les hôtels et services alimentaires, combinant dispositifs IoT et modèles ML personnalisés.'
+            en: 'An AI and IoT food waste management platform for hotels and food service teams, combining Raspberry Pi devices, image recognition, and Django analytics.',
+            fr: 'Une plateforme IA et IoT de gestion du gaspillage alimentaire pour hôtels et équipes de restauration, combinant Raspberry Pi, reconnaissance d’images et analytics Django.'
         },
         highlights: [
             {
@@ -164,8 +164,8 @@ export const projects: Project[] = [
             fr: 'Développeur Full Stack'
         },
         description: {
-            en: 'A full-stack web application for an EU-funded educational platform, featuring role-based authentication, course management, and multi-language support.',
-            fr: 'Une application web full-stack pour une plateforme éducative financée par l\'UE, avec authentification basée sur les rôles, gestion des cours et support multilingue.'
+            en: 'A full-stack ASP.NET Core web application for an EU-funded education platform, with role-based access, course workflows, CMS features, and multilingual content.',
+            fr: 'Une application web full-stack ASP.NET Core pour une plateforme éducative financée par l’UE, avec accès par rôle, workflows de cours, CMS et contenu multilingue.'
         },
         highlights: [
             {
@@ -198,8 +198,8 @@ export const projects: Project[] = [
             fr: 'Projet personnel'
         },
         description: {
-            en: 'A secure, local-first cross-platform password manager with military-grade encryption and browser extension support.',
-            fr: 'Un gestionnaire de mots de passe multiplateforme sécurisé, local-first, avec chiffrement de niveau militaire et support d\'extensions navigateur.'
+            en: 'A secure local-first password manager built with Rust, Electron, React, AES-256-GCM encryption, Argon2id key derivation, and browser extension autofill.',
+            fr: 'Un gestionnaire de mots de passe local-first construit avec Rust, Electron, React, chiffrement AES-256-GCM, dérivation Argon2id et autofill via extension navigateur.'
         },
         highlights: [
             {
@@ -229,4 +229,3 @@ export const skills = [
     "React", "Next.js", "TypeScript", "Node.js", "Rust", "Python",
     "ASP.NET Core", "PostgreSQL", "Redis", "Docker", "AWS", "Git"
 ];
-

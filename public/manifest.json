@@ -1,11 +1,13 @@
 {
-    "name": "Houssam Hamrouni | Full Stack Developer",
+    "name": "Houssam Hamrouni | AI & Web3 Software Engineer",
     "short_name": "Hou12",
-    "description": "Full Stack Developer specializing in React, TypeScript, and real-time applications.",
+    "description": "Portfolio of Houssam Hamrouni, a full-stack software engineer building AI voice systems, Web3 apps, real-time PWAs, and secure TypeScript products.",
     "start_url": "/",
+    "lang": "en",
     "display": "standalone",
     "background_color": "#030014",
     "theme_color": "#030014",
+    "categories": ["portfolio", "productivity", "developer"],
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
